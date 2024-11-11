@@ -1,7 +1,7 @@
 Tools
 =====
 
-Main tools used in this project.
+A list of the main tools used in this project.
 
 - pnpm
    - Better npm package manager 
@@ -12,3 +12,6 @@ Main tools used in this project.
 - Rollup
   - Build system for creating node packages
   - https://rollupjs.org
+- Jest
+  - Testing system
+  - https://jestjs.io
