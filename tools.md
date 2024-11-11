@@ -15,3 +15,6 @@ A list of the main tools used in this project.
 - Jest
   - Testing system
   - https://jestjs.io
+- Storyboard
+  - Visual tester and documenter
+  - https://storybook.js.org

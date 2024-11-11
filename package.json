@@ -10,7 +10,9 @@
   },
   "scripts": {
     "rollup": "rollup --config rollup.config.mjs",
-    "jest": "jest --config jest.config.js"
+    "jest": "jest --config jest.config.js",
+    "storybook": "storybook dev -p 6006",
+    "storybook:build": "storybook build"
   },
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -20,11 +22,20 @@
     "@babel/preset-env": "^7.26.0",
     "@babel/preset-react": "^7.25.9",
     "@babel/preset-typescript": "^7.26.0",
+    "@chromatic-com/storybook": "^3.2.2",
     "@rollup/plugin-commonjs": "^28.0.1",
     "@rollup/plugin-image": "^3.0.3",
     "@rollup/plugin-node-resolve": "^15.3.0",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^12.1.1",
+    "@storybook/addon-essentials": "^8.4.2",
+    "@storybook/addon-interactions": "^8.4.2",
+    "@storybook/addon-onboarding": "^8.4.2",
+    "@storybook/addon-webpack5-compiler-swc": "^1.0.5",
+    "@storybook/blocks": "^8.4.2",
+    "@storybook/react": "^8.4.2",
+    "@storybook/react-webpack5": "^8.4.2",
+    "@storybook/test": "^8.4.2",
     "@testing-library/react": "^16.0.1",
     "@types/jest": "^29.5.14",
     "@types/react": "^18.3.12",
@@ -36,6 +47,7 @@
     "rollup-plugin-dts": "^6.1.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
+    "storybook": "^8.4.2",
     "tslib": "^2.8.1",
     "typescript": "^5.6.3"
   }
