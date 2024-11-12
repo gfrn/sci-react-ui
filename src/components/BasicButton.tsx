@@ -1,9 +1,14 @@
-export interface BasicButtonProps {
-  label: string;
+import React from "react";
+import MuiButton from '@mui/material/Button';
+
+interface WrapperProps {
+  children: React.ReactNode;
 }
 
-const BasicButton = (props: BasicButtonProps) => {
-  return <button>{props.label}</button>;
+const BasicButton = ({children, ...props}: WrapperProps) => {
+  return <MuiButton {...props}>
+    {children}
+  </MuiButton>;
 };
 
 export {BasicButton};
