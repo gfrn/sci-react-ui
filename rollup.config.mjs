@@ -24,7 +24,8 @@ export default [
             commonjs(),
             terser(),
             typescript({
-                tsconfig: "./tsconfig.json"
+                tsconfig: "./tsconfig.json",
+                exclude: ["**/*.stories.*", "**/*.test.*"],
             }),
             postcss({
                 extensions: [".css"],
@@ -47,7 +48,8 @@ export default [
             commonjs(),
             terser(),
             typescript({
-                tsconfig: "./tsconfig.json"
+                tsconfig: "./tsconfig.json",
+                exclude: ["**/*.stories.*", "**/*.test.*"],
             }),
             postcss({
                 extensions: [".css"],
