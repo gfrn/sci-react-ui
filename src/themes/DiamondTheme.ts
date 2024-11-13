@@ -1,5 +1,4 @@
 import { createTheme, ThemeOptions } from '@mui/material/styles';
-import { lighten } from '@material-ui/core/styles';
 
 import {BaseThemeOptions} from "./BaseTheme";
 

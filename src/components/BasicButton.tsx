@@ -1,14 +1,10 @@
 import React from "react";
-import MuiButton from '@mui/material/Button';
+import Button, {ButtonProps} from '@mui/material/Button';
 
-interface WrapperProps {
-  children: React.ReactNode;
-}
-
-const BasicButton = ({children, ...props}: WrapperProps) => {
-  return <MuiButton {...props}>
+const BasicButton = ({children, ...props} : ButtonProps ) => {
+  return <Button {...props}>
     {children}
-  </MuiButton>;
+  </Button>;
 };
 
 export {BasicButton};
