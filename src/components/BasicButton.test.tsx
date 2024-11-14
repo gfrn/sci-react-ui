@@ -4,15 +4,17 @@ import {BasicButton} from "./BasicButton";
 
 describe("BasicButton", () => {
   test("renders the BasicButton component", () => {
-    render(<BasicButton label="" />);
+    render(<BasicButton />);
+    render(<BasicButton>child</BasicButton>);
+    render(<BasicButton><span>children</span></BasicButton>);
   });
 });
 
 
 describe("BasicButton", () => {
   test("renders the BasicButton component with correct label", () => {
-    const label = "Test Label"
-    render(<BasicButton label={label} />);
-    screen.getByText(label);
+    const text = "Button Text"
+    render(<BasicButton>{text}</BasicButton>);
+    screen.getByText(text);
   });
 });
