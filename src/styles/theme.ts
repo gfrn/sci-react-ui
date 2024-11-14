@@ -13,36 +13,23 @@ const theme = createTheme({
           borderBottom: '2px solid rgba(0,0,0,0.2)',
           textTransform: 'none',
           '&.default': {
-            color: colours.diamond[50].default,
-            backgroundColor: colours.diamond[600].default,
+            color: colours.diamondII.p_contrastText.light, 
+            backgroundColor: colours.diamondII.p_dark.light,
             '&:hover': {
               backgroundImage: 'linear-gradient(rgb(0 0 0/30%) 0 0)',
               '&:disabled': {
-                backgroundColor: colours.diamond[600].default,
+                backgroundColor: colours.diamondII.p_light.light,
               },
             },
           },
-          '&.pgSelected': {
-            backgroundColor: colours.diamond[600].default,
-            color: colours.diamond[50].default,
-            cursor: 'default',
-          },
-          '&.pgNotSelected': {
-            backgroundColor: 'grey',
-            color: 'charcoal',
-            fontSize: '0.875rem',
-            '&:hover': {
-              backgroundColor: colours.diamond[200].default,
-            },
-          },
           '&.onBlue': {
-            color: colours.diamond[500].default,
-            borderColor: colours.diamond[500].default,
+            color: colours.diamondII.s_main.light,
+            borderColor: colours.diamondII.s_main.light,
             border: '1px solid',
             fontSize: '0.875rem',
             '&:hover': {
-              color: colours.diamond[300].default,
-              backgroundColor: colours.diamond[500].default,
+              color:  colours.diamondII.p_dark.light,
+              backgroundColor: colours.diamondII.s_main.light,
             },
         },
         },

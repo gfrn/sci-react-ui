@@ -53,7 +53,7 @@ export const User = ({ user, onLogin, onLogout }: UserProps) => {
             <Stack direction="row" alignItems="center">
               <div style={{ padding: 10 }}>
                 <Typography
-                  color={colours.diamond[100].default}
+                  color={ colours.diamondII.p_contrastText.light }
                   display="inline-block"
                   textTransform="none"
                 >
@@ -61,7 +61,7 @@ export const User = ({ user, onLogin, onLogout }: UserProps) => {
                 </Typography>
                 <Typography
                   textAlign="left"
-                  color={colours.diamond[100].default}
+                  color={ colours.diamondII.p_contrastText.light }
                   fontSize="0.75rem"
                   textTransform="none"
                 >

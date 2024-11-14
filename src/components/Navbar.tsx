@@ -27,7 +27,7 @@ const NavLink = ({ children, ...props }: LinkProps) => (
   <Link
     sx={{
       "&:hover": {
-        color: colours.diamond[500].default,
+        color: colours.diamondII.s_main.light,
         borderBottom: "solid 4px",
       },
       textDecoration: "none",
@@ -38,7 +38,7 @@ const NavLink = ({ children, ...props }: LinkProps) => (
       display: "flex",
       borderTop: "4px solid transparent",
       borderBottom: "4px solid transparent",
-      color: colours.diamond[50].default,
+      color: colours.diamondII.p_contrastText.light,
     }}
     {...props}
   >
@@ -57,11 +57,11 @@ const NavLinks = ({ children }: NavLinksProps) => {
       <IconButton
         sx={{
           border: "none",
-          color: colours.diamond[50].default,
+          color: colours.diamondII.p_contrastText.light,
           backgroundColor: "transparent",
           display: { md: "none" },
           order: -1,
-          "&:hover": { color: colours.diamond[500].default },
+          "&:hover": { color: colours.diamondII.p_main.light },
         }}
         size={"small"}
         aria-label="Open Menu"
@@ -88,6 +88,7 @@ const NavLinks = ({ children }: NavLinksProps) => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            bgcolor: colours.diamondII.p_main.light,
           }}
         >
           {children}
@@ -110,7 +111,7 @@ const Navbar = ({
       <Box
         sx={{
           display: "flex",
-          bgcolor: colours.diamond[800].default,
+          bgcolor: colours.diamondII.p_main.light,
           px: { xs: "1rem", md: "7.5vw" },
           height: 50,
           width: "80%",

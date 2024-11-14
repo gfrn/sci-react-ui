@@ -84,6 +84,6 @@ export const NoLogo: Story = {
 
 export const CustomChildElement: Story = {
   args: {
-    children: <Chip label="Hello, World" sx={{ bgcolor: colours.diamond[100].default }} />,
+    children: <Chip label="Hello, World" sx={{ bgcolor: colours.diamondII.p_contrastText.light }} />,
   },
 };

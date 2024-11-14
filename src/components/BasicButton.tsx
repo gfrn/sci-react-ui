@@ -1,4 +1,3 @@
-import React from "react";
 import Button, {ButtonProps} from '@mui/material/Button';
 
 const BasicButton = ({children, ...props} : ButtonProps ) => {

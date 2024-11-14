@@ -10,3 +10,19 @@ import { colours } from "../../styles/colours";
     colors={Object.fromEntries(Object.entries(colours.diamond).map(([name, colour]) => [name, colour.default]))}
   />
 </ColorPalette>
+
+<ColorPalette>
+  <ColorItem
+    title="New Light Diamond"
+    subtitle="New Light Diamond Themed Colour Palette"
+    colors={Object.fromEntries(Object.entries(colours.diamondII).map(([name, colour]) => [name, colour.light]))}
+  />
+</ColorPalette>
+
+<ColorPalette>
+  <ColorItem
+    title="New Dark Diamond"
+    subtitle="New Dark Diamond Themed Colour Palette"
+    colors={Object.fromEntries(Object.entries(colours.diamondII).map(([name, colour]) => [name, colour.dark]))}
+  />
+</ColorPalette>
