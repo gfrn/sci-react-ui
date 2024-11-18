@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from "@mui/material/styles";
 
 const BaseThemeOptions = {
   typography: {
@@ -7,17 +7,17 @@ const BaseThemeOptions = {
   colorSchemes: {
     light: {
       palette: {
-        background:{ default: '#f5f5f5'},
+        background: { default: "#f5f5f5" },
       },
     },
     dark: {
       palette: {
-        background:{ default: '#222'},
+        background: { default: "#222" },
       },
     },
-  }
-}
+  },
+};
 
 const BaseTheme = createTheme(BaseThemeOptions);
 
-export {BaseThemeOptions, BaseTheme}
+export { BaseThemeOptions, BaseTheme };

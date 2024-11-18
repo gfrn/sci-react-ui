@@ -1,19 +1,11 @@
 import { Meta, StoryObj } from "@storybook/react";
 
 import { User } from "./User";
-import ThemeProviderWrapper from "./ThemeProviderWrapper";
 
 const meta: Meta<typeof User> = {
-  title: "Components/Control/User",
+  title: "SciReactUI/Control/User",
   component: User,
   tags: ["autodocs"],
-  decorators: [
-    (Story) => (
-      <ThemeProviderWrapper>
-        <Story />
-      </ThemeProviderWrapper>
-    ),
-  ],
 };
 
 export default meta;

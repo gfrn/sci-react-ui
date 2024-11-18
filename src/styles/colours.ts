@@ -1,4 +1,9 @@
 // Colours from https://github.com/DiamondLightSource/web-ui-components
+import { createTheme } from "@mui/material/styles";
+import { DiamondTheme } from "../themes/DiamondTheme";
+
+const theme = createTheme(DiamondTheme);
+
 const colours = {
   diamond: {
     50: { default: "#FBFBFB", _dark: "#525151" }, // white
@@ -12,16 +17,16 @@ const colours = {
     700: { default: "#1040A1", _dark: "#071d4a" }, // royal blue
     800: { default: "#001d55", _dark: "#023496" }, // dark blue
   },
-  diamondII: {
-    p_main: { light: "#202740", dark: "#6175bd" },
-    p_contrastText: { light: "#ffffff", dark: "#ffffff" },
-    p_dark: { light: "#161B2C", dark: "#435184" },
-    p_light: { light: "#4C5266", dark: "#8090CA" },
-    s_main: { light: "#facf07", dark: "#facf07" },
-    s_light: { light: "#fbd838", dark: "#FBD838" },
-    s_dark: { light: "#af9004", dark: "#AF9004" },
-    s_contrastText: { light: "#000000", dark: "#000000" },
-  },
+  colours: {
+    primaryMain: theme.palette.primary.main,
+    primaryLight: theme.palette.primary.light,
+    primaryDark: theme.palette.primary.dark,
+    primaryContrastText: theme.palette.primary.contrastText,
+    secondaryMain: theme.palette.secondary.main,
+    secondaryLight: theme.palette.secondary.light,
+    secondaryDark: theme.palette.secondary.dark,
+    secondaryContrastText: theme.palette.secondary.contrastText,
+  }
 };
 
 const fillColours = ["#ff5733", "#19D3FF", "#FF9B40", "#FF2677", "#FF9B40"];

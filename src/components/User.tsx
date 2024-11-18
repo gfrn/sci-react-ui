@@ -1,5 +1,5 @@
 // Adapted from https://github.com/DiamondLightSource/web-ui-components
-import { Avatar, Box, Link, Stack, Typography } from "@mui/material";
+import { Avatar, Box, Link, Stack, Typography, useTheme } from "@mui/material";
 
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
@@ -7,7 +7,6 @@ import { Button } from "../styles/components";
 import { useState } from "react";
 
 import { MdLogin } from "react-icons/md";
-import { colours } from "../styles/colours";
 
 export interface AuthState {
   fedid: string;
@@ -22,15 +21,16 @@ export interface UserProps {
 
 export const User = ({ user, onLogin, onLogout }: UserProps) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
 
+  const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
-
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const theme = useTheme();
 
   return (
     <>
@@ -53,7 +53,7 @@ export const User = ({ user, onLogin, onLogout }: UserProps) => {
             <Stack direction="row" alignItems="center">
               <div style={{ padding: 10 }}>
                 <Typography
-                  color={ colours.diamondII.p_contrastText.light }
+                  color={theme.palette.primary.contrastText}
                   display="inline-block"
                   textTransform="none"
                 >
@@ -61,7 +61,7 @@ export const User = ({ user, onLogin, onLogout }: UserProps) => {
                 </Typography>
                 <Typography
                   textAlign="left"
-                  color={ colours.diamondII.p_contrastText.light }
+                  color={theme.palette.primary.contrastText}
                   fontSize="0.75rem"
                   textTransform="none"
                 >

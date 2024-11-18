@@ -1,11 +1,11 @@
-import { createTheme, ThemeOptions } from "@mui/material/styles";
+import { createTheme, Theme } from "@mui/material/styles";
 
 import { BaseThemeOptions } from "./BaseTheme";
 
 const dlsLogoBlue = "#202740";
 const dlsLogoYellow = "#facf07";
 
-const DiamondTheme: ThemeOptions = createTheme({
+const DiamondTheme: Theme = createTheme({
   ...BaseThemeOptions,
   colorSchemes: {
     // https://zenoo.github.io/mui-theme-creator/
@@ -40,6 +40,45 @@ const DiamondTheme: ThemeOptions = createTheme({
           contrastText: "#000000", // black
         },
       },
+    },
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          borderBottom: "2px solid rgba(0,0,0,0.2)",
+          textTransform: "none",
+          "&.default": {
+            color: theme.palette.primary.contrastText,
+            backgroundColor: theme.palette.primary.dark,
+            "&:hover": {
+              backgroundImage: "linear-gradient(rgb(0 0 0/30%) 0 0)",
+              "&:disabled": {
+                backgroundColor: theme.palette.primary.light,
+              },
+            },
+          },
+          "&.onBlue": {
+            color: theme.palette.secondary.light,
+            borderColor: theme.palette.secondary.light,
+            border: "1px solid",
+            fontSize: "0.875rem",
+            "&:hover": {
+              color: theme.palette.primary.dark,
+              backgroundColor: theme.palette.secondary.light,
+            },
+          },
+        }),
+      },
+    },
+  },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 480,
+      md: 768,
+      lg: 992,
+      xl: 1280,
     },
   },
 });

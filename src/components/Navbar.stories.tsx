@@ -1,21 +1,12 @@
 import Chip from "@mui/material/Chip";
 import { Meta, StoryObj } from "@storybook/react";
 import { User } from "./User";
-import {colours} from "../styles/colours";
 import { NavLink, NavLinks, Navbar } from "./Navbar";
-import ThemeProviderWrapper from './ThemeProviderWrapper';
 
 const meta: Meta<typeof Navbar> = {
-  title: "Components/Navigation/Navbar",
+  title: "SciReactUI/Navigation/Navbar",
   component: Navbar,
   tags: ["autodocs"],
-  decorators: [
-    (Story) => (
-      <ThemeProviderWrapper>
-        <Story />
-      </ThemeProviderWrapper>
-    ),
-  ],
 };
 
 export default meta;
@@ -47,8 +38,8 @@ export const Links: Story = {
   args: {
     children: (
       <NavLinks>
-        <NavLink href="#">Proposal</NavLink>
-        <NavLink href="#">Visits</NavLink>
+        <NavLink href="#" key="proposal">Proposal</NavLink>
+        <NavLink href="#" key="visits">Visits</NavLink>
       </NavLinks>
     ),
   },
@@ -58,8 +49,8 @@ export const LinksAndUser: Story = {
   args: {
     children: [
       <NavLinks>
-        <NavLink href="#">Proposal</NavLink>
-        <NavLink href="#">Visits</NavLink>
+        <NavLink href="#" key="proposal">Proposal</NavLink>
+        <NavLink href="#" key="visits">Visits</NavLink>
       </NavLinks>,
       <User
         onLogin={() => {}}
@@ -74,8 +65,8 @@ export const NoLogo: Story = {
   args: {
     children: (
       <NavLinks>
-        <NavLink href="#">Proposal</NavLink>
-        <NavLink href="#">Visits</NavLink>
+        <NavLink href="#" key="proposal">Proposal</NavLink>
+        <NavLink href="#" key="visits">Visits</NavLink>
       </NavLinks>
     ),
     logo: null,
@@ -84,6 +75,6 @@ export const NoLogo: Story = {
 
 export const CustomChildElement: Story = {
   args: {
-    children: <Chip label="Hello, World" sx={{ bgcolor: colours.diamondII.p_contrastText.light }} />,
+    children: <Chip label="Hello, World" sx={{ bgcolor: "#ffffff" }} />,
   },
 };
