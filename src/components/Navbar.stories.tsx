@@ -26,6 +26,7 @@ export const WithUser: Story = {
   args: {
     children: (
       <User
+        key="user"
         onLogin={() => {}}
         onLogout={() => {}}
         user={{ name: "Name", fedid: "FedID" }}
@@ -37,7 +38,7 @@ export const WithUser: Story = {
 export const Links: Story = {
   args: {
     children: (
-      <NavLinks>
+      <NavLinks key="links">
         <NavLink href="#" key="first">
           First
         </NavLink>
@@ -52,7 +53,7 @@ export const Links: Story = {
 export const LinksAndUser: Story = {
   args: {
     children: [
-      <NavLinks>
+      <NavLinks key="links">
         <NavLink href="#" key="first">
           First
         </NavLink>
@@ -61,6 +62,7 @@ export const LinksAndUser: Story = {
         </NavLink>
       </NavLinks>,
       <User
+        key="user"
         onLogin={() => {}}
         onLogout={() => {}}
         user={{ name: "Name", fedid: "FedID" }}
@@ -72,7 +74,7 @@ export const LinksAndUser: Story = {
 export const NoLogo: Story = {
   args: {
     children: (
-      <NavLinks>
+      <NavLinks key="links">
         <NavLink href="#" key="first">
           First
         </NavLink>
