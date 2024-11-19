@@ -38,8 +38,12 @@ export const Links: Story = {
   args: {
     children: (
       <NavLinks>
-        <NavLink href="#" key="proposal">Proposal</NavLink>
-        <NavLink href="#" key="visits">Visits</NavLink>
+        <NavLink href="#" key="first">
+          First
+        </NavLink>
+        <NavLink href="#" key="second">
+          Second
+        </NavLink>
       </NavLinks>
     ),
   },
@@ -49,8 +53,12 @@ export const LinksAndUser: Story = {
   args: {
     children: [
       <NavLinks>
-        <NavLink href="#" key="proposal">Proposal</NavLink>
-        <NavLink href="#" key="visits">Visits</NavLink>
+        <NavLink href="#" key="first">
+          First
+        </NavLink>
+        <NavLink href="#" key="second">
+          Second
+        </NavLink>
       </NavLinks>,
       <User
         onLogin={() => {}}
@@ -65,8 +73,12 @@ export const NoLogo: Story = {
   args: {
     children: (
       <NavLinks>
-        <NavLink href="#" key="proposal">Proposal</NavLink>
-        <NavLink href="#" key="visits">Visits</NavLink>
+        <NavLink href="#" key="first">
+          First
+        </NavLink>
+        <NavLink href="#" key="second">
+          Second
+        </NavLink>
       </NavLinks>
     ),
     logo: null,
