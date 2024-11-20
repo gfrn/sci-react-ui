@@ -2,3 +2,6 @@
 /node_modules/
 
 *storybook.log
+
+# pnpm pack outputs
+/diamondlightsource-sci-react-ui-*.tgz

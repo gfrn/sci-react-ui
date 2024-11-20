@@ -1,10 +1,7 @@
-import React from "react";
-import Button, {ButtonProps} from '@mui/material/Button';
+import Button, { ButtonProps } from "@mui/material/Button";
 
-const BasicButton = ({children, ...props} : ButtonProps ) => {
-  return <Button {...props}>
-    {children}
-  </Button>;
+const BasicButton = ({ children, ...props }: ButtonProps) => {
+  return <Button {...props}>{children}</Button>;
 };
 
-export {BasicButton};
+export { BasicButton };

@@ -6,7 +6,7 @@ import terser from "@rollup/plugin-terser";
 import postcss from "rollup-plugin-postcss";
 import image from "@rollup/plugin-image";
 
-import packageJson from "./package.json" assert { type: "json" };
+import packageJson from "./package.json" with { type: "json" };
 
 export default [
     {

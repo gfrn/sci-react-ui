@@ -4,27 +4,29 @@ const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   addons: [
     "@storybook/addon-webpack5-compiler-swc",
-    "@storybook/addon-onboarding",
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
+    '@storybook/addon-links',
+    '@storybook/addon-toolbars',
+
   ],
   framework: {
-    name: '@storybook/react-webpack5',
+    name: "@storybook/react-webpack5",
     options: {
       builder: {
-        useSWC: true
-      }
-    }
+        useSWC: true,
+      },
+    },
   },
   swc: () => ({
     jsc: {
       transform: {
         react: {
-          runtime: 'automatic'
-        }
-      }
-    }
-  })
+          runtime: "automatic",
+        },
+      },
+    },
+  }),
 };
 export default config;
