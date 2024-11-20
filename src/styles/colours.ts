@@ -1,8 +1,6 @@
 // Colours from https://github.com/DiamondLightSource/web-ui-components
-import { createTheme } from "@mui/material/styles";
 import { DiamondTheme } from "../themes/DiamondTheme";
 
-const theme = createTheme(DiamondTheme);
 
 const colours = {
   diamond: {
@@ -18,14 +16,14 @@ const colours = {
     800: { default: "#001d55", _dark: "#023496" }, // dark blue
   },
   colours: {
-    primaryMain: theme.palette.primary.main,
-    primaryLight: theme.palette.primary.light,
-    primaryDark: theme.palette.primary.dark,
-    primaryContrastText: theme.palette.primary.contrastText,
-    secondaryMain: theme.palette.secondary.main,
-    secondaryLight: theme.palette.secondary.light,
-    secondaryDark: theme.palette.secondary.dark,
-    secondaryContrastText: theme.palette.secondary.contrastText,
+    primaryMain: DiamondTheme.palette.primary.main,
+    primaryLight: DiamondTheme.palette.primary.light,
+    primaryDark: DiamondTheme.palette.primary.dark,
+    primaryContrastText: DiamondTheme.palette.primary.contrastText,
+    secondaryMain: DiamondTheme.palette.secondary.main,
+    secondaryLight: DiamondTheme.palette.secondary.light,
+    secondaryDark: DiamondTheme.palette.secondary.dark,
+    secondaryContrastText: DiamondTheme.palette.secondary.contrastText,
   }
 };
 

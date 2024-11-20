@@ -46,8 +46,8 @@ const DiamondTheme: Theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: ({ theme }) => ({
-          borderBottom: "2px solid rgba(0,0,0,0.2)",
           textTransform: "none",
+          "&.MuiButton-contained": {},
           "&.default": {
             color: theme.palette.primary.contrastText,
             backgroundColor: theme.palette.primary.dark,
