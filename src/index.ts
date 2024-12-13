@@ -1,4 +1,5 @@
 // components
+export * from "./components/Breadcrumbs";
 export * from "./components/Navbar";
 export * from "./components/User";
 export * from "./components/VisitInput";
