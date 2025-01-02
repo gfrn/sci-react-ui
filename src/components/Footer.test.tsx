@@ -51,7 +51,7 @@ describe("Footer", () => {
         <FooterLinks>
           <FooterLink href={linkOneName}>{lineOneText}</FooterLink>
         </FooterLinks>
-      </Footer>
+      </Footer>,
     );
 
     await waitFor(() => {
@@ -74,7 +74,7 @@ describe("Footer", () => {
           <FooterLink href={linkOneName}>{linkOneText}</FooterLink>
           <FooterLink href={linkTwoName}>{linkTwoText}</FooterLink>
         </FooterLinks>
-      </Footer>
+      </Footer>,
     );
 
     await waitFor(() => {

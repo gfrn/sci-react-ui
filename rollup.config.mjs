@@ -9,51 +9,51 @@ import image from "@rollup/plugin-image";
 import packageJson from "./package.json" with { type: "json" };
 
 export default [
-    {
-        input: "src/index.ts",
-        output: {
-            format: "cjs",
-            file: packageJson.main
-        },
-        plugins: [
-            peerDepsExternal({
-                includeDependencies: true,
-            }),
-            image(),
-            resolve(),
-            commonjs(),
-            terser(),
-            typescript({
-                tsconfig: "./tsconfig.json",
-                exclude: ["**/*.stories.*", "**/*.test.*"],
-            }),
-            postcss({
-                extensions: [".css"],
-            }),
-        ],
+  {
+    input: "src/index.ts",
+    output: {
+      format: "cjs",
+      file: packageJson.main,
     },
-    {
-        input: "src/index.ts",
-        output: {
-            format: "esm",
-            sourcemap: true,
-            file: packageJson.module
-        },
-        plugins: [
-            peerDepsExternal({
-                includeDependencies: true,
-            }),
-            image(),
-            resolve(),
-            commonjs(),
-            terser(),
-            typescript({
-                tsconfig: "./tsconfig.json",
-                exclude: ["**/*.stories.*", "**/*.test.*"],
-            }),
-            postcss({
-                extensions: [".css"],
-            }),
-        ],
-    }
+    plugins: [
+      peerDepsExternal({
+        includeDependencies: true,
+      }),
+      image(),
+      resolve(),
+      commonjs(),
+      terser(),
+      typescript({
+        tsconfig: "./tsconfig.json",
+        exclude: ["**/*.stories.*", "**/*.test.*"],
+      }),
+      postcss({
+        extensions: [".css"],
+      }),
+    ],
+  },
+  {
+    input: "src/index.ts",
+    output: {
+      format: "esm",
+      sourcemap: true,
+      file: packageJson.module,
+    },
+    plugins: [
+      peerDepsExternal({
+        includeDependencies: true,
+      }),
+      image(),
+      resolve(),
+      commonjs(),
+      terser(),
+      typescript({
+        tsconfig: "./tsconfig.json",
+        exclude: ["**/*.stories.*", "**/*.test.*"],
+      }),
+      postcss({
+        extensions: [".css"],
+      }),
+    ],
+  },
 ];

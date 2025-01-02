@@ -1,6 +1,5 @@
 import { visitRegex, Visit, visitToText, regexToVisit } from "./diamond";
 describe("visitRegex", () => {
-
   const validStrings = ["ab123456-78", "xy1-99", "cd123-456", "fg456789-2"];
   validStrings.forEach((str) => {
     test(`should match valid string '${str}'`, () => {
@@ -27,12 +26,12 @@ describe("visitRegex", () => {
     { str: "ab12-34-56", name: "extra number" },
   ];
 
-    invalidStrings.forEach(({ str, name }) => {
-      test(`should not match invalid string '${str}' (${name})`, () => {
-        const result = visitRegex.test(str);
-        expect(result).toBe(false);
-      });
+  invalidStrings.forEach(({ str, name }) => {
+    test(`should not match invalid string '${str}' (${name})`, () => {
+      const result = visitRegex.test(str);
+      expect(result).toBe(false);
     });
+  });
 
   test("should get three correct groups", () => {
     const str = "ab12-34";
