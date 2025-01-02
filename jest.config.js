@@ -1,6 +1,4 @@
-module.exports = {
-    testEnvironment: "jsdom",
-    moduleNameMapper: {
-        '^.+.(svg)$': 'jest-transform-stub',
-    }
+export const testEnvironment = "jsdom";
+export const moduleNameMapper = {
+  "^.+.(svg)$": "jest-transform-stub",
 };
