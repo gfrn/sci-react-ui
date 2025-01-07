@@ -1,64 +1,70 @@
-import React from 'react';
-import {CssBaseline} from "@mui/material";
+import React from "react";
+import { CssBaseline } from "@mui/material";
 import type { Preview } from "@storybook/react";
 
-import {ThemeProvider} from '../src'
-import {GenericTheme, DiamondTheme} from '../src'
+import { ThemeProvider } from "../src";
+import { GenericTheme, DiamondTheme } from "../src";
 
-import {ThemeSwapper, TextLight, TextDark} from "./ThemeSwapper";
+import { Context, ThemeSwapper, TextLight, TextDark } from "./ThemeSwapper";
 
-const TextThemeBase = 'Theme: Generic'
-const TextThemeDiamond = 'Theme: Diamond'
+const TextThemeBase = "Theme: Generic";
+const TextThemeDiamond = "Theme: Diamond";
 
 export const decorators = [
-  (StoriesWithPadding:any) => {
-    return <div style={{padding: '2em'}}>
-      <StoriesWithPadding />
-    </div>
+  (StoriesWithPadding: React.FC) => {
+    return (
+      <div style={{ padding: "2em" }}>
+        <StoriesWithPadding />
+      </div>
+    );
   },
-  (StoriesWithThemeSwapping:any, context: any) => {
-    return <ThemeSwapper context={context}>
-      <StoriesWithThemeSwapping/>
-    </ThemeSwapper>
+  (StoriesWithThemeSwapping: React.FC, context: Context) => {
+    return (
+      <ThemeSwapper context={context}>
+        <StoriesWithThemeSwapping />
+      </ThemeSwapper>
+    );
   },
-  (StoriesWithThemeProvider:any, context:any) => {
+  (StoriesWithThemeProvider: React.FC, context: Context) => {
     const selectedTheme = context.globals.theme || TextThemeBase;
     const selectedThemeMode = context.globals.themeMode || TextLight;
 
-    return <ThemeProvider
-        theme={(selectedTheme == TextThemeBase) ? GenericTheme : DiamondTheme}
-        defaultMode={(selectedThemeMode == TextLight) ? "light" : "dark"}
-    >
-      <CssBaseline/>
-      <StoriesWithThemeProvider/>
-    </ThemeProvider>
+    return (
+      <ThemeProvider
+        theme={selectedTheme == TextThemeBase ? GenericTheme : DiamondTheme}
+        defaultMode={selectedThemeMode == TextLight ? "light" : "dark"}
+      >
+        <CssBaseline />
+        <StoriesWithThemeProvider />
+      </ThemeProvider>
+    );
   },
 ];
 
 const preview: Preview = {
   globalTypes: {
     theme: {
-      description: 'Global theme for components',
+      description: "Global theme for components",
       toolbar: {
-        title: 'Theme',
-        icon: 'cog',
+        title: "Theme",
+        icon: "cog",
         items: [TextThemeBase, TextThemeDiamond],
         dynamicTitle: true,
       },
     },
     themeMode: {
-      description: 'Global theme mode for components',
+      description: "Global theme mode for components",
       toolbar: {
-        title: 'Theme Mode',
-        icon: 'mirror',
+        title: "Theme Mode",
+        icon: "mirror",
         items: [TextLight, TextDark],
         dynamicTitle: true,
       },
     },
   },
   initialGlobals: {
-    theme: 'Theme: Diamond',
-    themeMode: 'Mode: Light',
+    theme: "Theme: Diamond",
+    themeMode: "Mode: Light",
   },
   parameters: {
     controls: {
@@ -68,7 +74,7 @@ const preview: Preview = {
       },
     },
     backgrounds: { disable: true },
-    layout: 'fullscreen',
+    layout: "fullscreen",
   },
 };
 

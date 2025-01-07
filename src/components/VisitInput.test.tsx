@@ -26,7 +26,7 @@ it("should not render submit button", () => {
 it("should produce visit and parameters on submit", () => {
   const onSubmit = jest.fn();
   const { getByTestId } = render(
-    <VisitInput onSubmit={onSubmit} parameters={{ fedid: "abc98765" }} />
+    <VisitInput onSubmit={onSubmit} parameters={{ fedid: "abc98765" }} />,
   );
   const visitField = within(getByTestId("visit-field")).getByRole("textbox");
   fireEvent.change(visitField, { target: { value: "zz12345-7" } });
@@ -40,7 +40,7 @@ it("should produce visit and parameters on submit", () => {
     },
     {
       fedid: "abc98765",
-    }
+    },
   );
 });
 
@@ -57,7 +57,7 @@ it("should produce visit on submit", () => {
       proposalNumber: 12345,
       number: 7,
     },
-    undefined
+    undefined,
   );
 });
 
@@ -68,7 +68,7 @@ it("should update visit on submit", () => {
       onSubmit={onSubmit}
       visit={{ proposalCode: "xx", proposalNumber: 98765, number: 4 }}
       parameters={{ fedid: "abc98765" }}
-    />
+    />,
   );
   const visitField = within(getByTestId("visit-field")).getByRole("textbox");
   fireEvent.change(visitField, { target: { value: "zz12345-7" } });
@@ -82,6 +82,6 @@ it("should update visit on submit", () => {
     },
     {
       fedid: "abc98765",
-    }
+    },
   );
 });

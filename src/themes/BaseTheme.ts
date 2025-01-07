@@ -1,8 +1,8 @@
 // import {ThemeOptions} from "@mui/material/styles";
-import {ImageColorSchemeSwitchType} from "../components/ImageColorSchemeSwitch";
+import { ImageColorSchemeSwitchType } from "../components/ImageColorSchemeSwitch";
 
 // Make additions to theme, so that anything can be available throughout the app
-declare module '@mui/material/styles' {
+declare module "@mui/material/styles" {
   interface Theme {
     logos?: {
       normal: ImageColorSchemeSwitchType;
@@ -45,4 +45,4 @@ const BaseThemeOptions /* : ThemeOptions */ = {
   },
 };
 
-export { BaseThemeOptions }
+export { BaseThemeOptions };

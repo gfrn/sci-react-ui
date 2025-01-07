@@ -13,7 +13,10 @@ import {
 import { MdMenu, MdClose } from "react-icons/md";
 import React, { useState } from "react";
 
-import {ImageColorSchemeSwitch, ImageColorSchemeSwitchType} from "./ImageColorSchemeSwitch";
+import {
+  ImageColorSchemeSwitch,
+  ImageColorSchemeSwitchType,
+} from "./ImageColorSchemeSwitch";
 
 interface NavLinksProps {
   children: React.ReactElement<LinkProps> | React.ReactElement<LinkProps>[];
@@ -27,7 +30,7 @@ interface NavbarProps extends BoxProps {
 
 const NavLink = ({ children, ...props }: LinkProps) => {
   const theme = useTheme();
-  
+
   return (
     <Link
       sx={{
@@ -111,17 +114,13 @@ const NavLinks = ({ children }: NavLinksProps) => {
 /**
  * Basic navigation bar. Can be used with `NavLinks` and `NavLink` to display a responsive list of links.
  */
-const Navbar = ({
-  children,
-  logo,
-  ...props
-}: NavbarProps) => {
+const Navbar = ({ children, logo, ...props }: NavbarProps) => {
   const theme = useTheme();
-  
-  if( logo === "theme" ) {
-     logo = theme.logos?.normal
+
+  if (logo === "theme") {
+    logo = theme.logos?.normal;
   }
-  
+
   return (
     <Box top="0" zIndex={1} width="100%" {...props}>
       <Paper
@@ -133,7 +132,7 @@ const Navbar = ({
           width: "100%",
           alignItems: "center",
           justifyContent: "space-between",
-          borderRadius:0
+          borderRadius: 0,
         }}
       >
         <Stack
@@ -149,7 +148,7 @@ const Navbar = ({
                   "&:hover": { filter: "brightness(80%);" },
                 }}
               >
-                <ImageColorSchemeSwitch image={logo}/>
+                <ImageColorSchemeSwitch image={logo} />
               </Box>
             </Link>
           ) : null}

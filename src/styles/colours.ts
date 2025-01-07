@@ -1,7 +1,6 @@
 // Colours from https://github.com/DiamondLightSource/web-ui-components
 import { DiamondTheme } from "../themes/DiamondTheme";
 
-
 const colours = {
   diamond: {
     50: { default: "#FBFBFB", _dark: "#525151" }, // white
@@ -24,7 +23,7 @@ const colours = {
     secondaryLight: DiamondTheme.palette.secondary.light,
     secondaryDark: DiamondTheme.palette.secondary.dark,
     secondaryContrastText: DiamondTheme.palette.secondary.contrastText,
-  }
+  },
 };
 
 const fillColours = ["#ff5733", "#19D3FF", "#FF9B40", "#FF2677", "#FF9B40"];

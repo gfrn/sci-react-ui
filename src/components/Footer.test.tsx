@@ -17,12 +17,13 @@ describe("Footer", () => {
 
   test("Should render copyright only", async () => {
     const copyrightText = "add text here";
+    const currentYear = new Date().getFullYear();
     render(<Footer logo={null} copyright={copyrightText} />);
 
     await waitFor(() => {
       expect(screen.queryByRole("paragraph")).toBeInTheDocument();
       expect(screen.queryByRole("paragraph")?.textContent).toStrictEqual(
-        `Copyright © 2024 ${copyrightText}`
+        `Copyright © ${currentYear} ${copyrightText}`,
       );
       // No logo
       expect(screen.queryByRole("img")).not.toBeTruthy();
@@ -31,13 +32,14 @@ describe("Footer", () => {
 
   test("Should render logo and copyright", async () => {
     const copyrightText = "add text here";
+    const currentYear = new Date().getFullYear();
     render(<Footer logo={dlsLogo} copyright={copyrightText} />);
 
     await waitFor(() => {
       expect(screen.getByRole("img")).toBeInTheDocument();
       expect(screen.queryByRole("paragraph")).toBeInTheDocument();
       expect(screen.queryByRole("paragraph")?.textContent).toStrictEqual(
-        `Copyright © 2024 ${copyrightText}`
+        `Copyright © ${currentYear} ${copyrightText}`,
       );
     });
   });
@@ -51,7 +53,7 @@ describe("Footer", () => {
         <FooterLinks>
           <FooterLink href={linkOneName}>{lineOneText}</FooterLink>
         </FooterLinks>
-      </Footer>
+      </Footer>,
     );
 
     await waitFor(() => {
@@ -74,7 +76,7 @@ describe("Footer", () => {
           <FooterLink href={linkOneName}>{linkOneText}</FooterLink>
           <FooterLink href={linkTwoName}>{linkTwoText}</FooterLink>
         </FooterLinks>
-      </Footer>
+      </Footer>,
     );
 
     await waitFor(() => {

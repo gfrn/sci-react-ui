@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 
 import { User } from "./User";
-import {Avatar} from "@mui/material";
+import { Avatar } from "@mui/material";
 
 const meta: Meta<typeof User> = {
   title: "SciReactUI/Control/User",
@@ -31,13 +31,13 @@ export const LoggedInLongName: Story = {
 export const LoggedInChangeColor: Story = {
   args: {
     color: "red",
-    user: { name: "Name Surname", fedid: "abc12345" }
+    user: { name: "Name Surname", fedid: "abc12345" },
   },
 };
 
 export const LoggedInReplaceAvatar: Story = {
   args: {
     user: { name: "Name Surname", fedid: "abc12345" },
-    avatar: <Avatar sx={{ bgcolor: "red" }}>JL</Avatar>
+    avatar: <Avatar sx={{ bgcolor: "red" }}>JL</Avatar>,
   },
 };
