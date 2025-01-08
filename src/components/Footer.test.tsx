@@ -1,18 +1,32 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
-import dlsLogo from "../public/dls.svg";
-
+import dlsLogo from "../public/generic/logo-short.svg";
 import { Footer, FooterLink, FooterLinks } from "./Footer";
-describe("Footer", () => {
-  test("Should render logo only", async () => {
-    render(<Footer logo={dlsLogo} />);
+import { ImageColorSchemeSwitch } from "./ImageColorSchemeSwitch";
+import { ThemeProvider } from "../themes/ThemeProvider";
 
-    await waitFor(() => {
-      expect(screen.getByRole("img")).toBeInTheDocument();
-      // No copyright text
-      expect(screen.queryByRole("paragraph")).not.toBeTruthy();
-    });
+jest.mock("./ImageColorSchemeSwitch");
+// @ts-expect-error: doesn't find mockImplementation outside of testing.
+ImageColorSchemeSwitch.mockImplementation(() => <img src="src" alt="alt" />);
+
+describe("Footer", () => {
+  test("Should render logo only", () => {
+    render(<Footer logo={{ src: dlsLogo, alt: "t" }} />);
+
+    expect(screen.getByRole("img")).toBeInTheDocument();
+    // No copyright text
+    expect(screen.queryByRole("paragraph")).not.toBeInTheDocument();
+  });
+
+  test("Should render logo via theme", () => {
+    render(
+      <ThemeProvider>
+        <Footer logo="theme" />
+      </ThemeProvider>,
+    );
+
+    expect(screen.getByRole("img")).toBeInTheDocument();
   });
 
   test("Should render copyright only", async () => {
@@ -33,12 +47,15 @@ describe("Footer", () => {
   test("Should render logo and copyright", async () => {
     const copyrightText = "add text here";
     const currentYear = new Date().getFullYear();
-    render(<Footer logo={dlsLogo} copyright={copyrightText} />);
+    render(
+      <Footer logo={{ src: dlsLogo, alt: "" }} copyright={copyrightText} />,
+    );
 
     await waitFor(() => {
       expect(screen.getByRole("img")).toBeInTheDocument();
-      expect(screen.queryByRole("paragraph")).toBeInTheDocument();
-      expect(screen.queryByRole("paragraph")?.textContent).toStrictEqual(
+      const paragraph = screen.getByRole("paragraph");
+      expect(paragraph).toBeInTheDocument();
+      expect(paragraph.textContent).toStrictEqual(
         `Copyright © ${currentYear} ${copyrightText}`,
       );
     });
