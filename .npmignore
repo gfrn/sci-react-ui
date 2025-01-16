@@ -13,7 +13,7 @@ src/storybook/
 
 rollup.config.mjs
 jest.config.js
-babel.config.js
+babel.config.cjs
 tsconfig.json
 
 src/**/*.stories.*
