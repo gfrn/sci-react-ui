@@ -21,3 +21,5 @@ src/**/*.test.*
 
 secret.txt
 diamondlightsource-sci-react-ui*.tgz
+
+tsconfig.tsbuildinfo

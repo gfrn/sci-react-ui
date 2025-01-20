@@ -17,7 +17,7 @@ export default [
     "**/*.html",
     "**/*.svg",
     "**/*.md",
-    "babel.config.cjs",
+    "babel.config.js",
     "eslint.config.js",
     "jest.config.js",
     "rollup.config.mjs",
