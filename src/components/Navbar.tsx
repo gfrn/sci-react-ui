@@ -126,7 +126,7 @@ const Navbar = ({ children, logo, ...props }: NavbarProps) => {
       <Paper
         sx={{
           display: "flex",
-          backgroundColor: theme.palette.primary.main,
+          backgroundColor: theme.vars.palette.primary.main,
           px: { xs: "1rem", md: "7.5vw" },
           height: 50,
           width: "100%",
